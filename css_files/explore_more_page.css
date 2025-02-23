@@ -1,0 +1,76 @@
+.explore-more-page {
+    padding: 40px; /* Adjust as needed */
+    background-color: #f8f8f8; /* Example background color */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center; /* Center the title */
+}
+
+.category-filter {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    background-color: #eee;
+    color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.filter-btn:hover {
+    background-color: #ddd;
+}
+
+.filter-btn.active {
+    background-color: #007bff; /* Example active color */
+    color: white;
+}
+
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.product-box {
+    border: 1px solid #ddd;
+    overflow: hidden; /* For image overlay effect */
+    position: relative; /* For positioning the overlay */
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    display: block; /* Prevents a small space below the image */
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth transition

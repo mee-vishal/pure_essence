@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore More - Pure Essence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css_files\header.css">
+    <link rel="stylesheet" href="css_files\navbar.css">
+    <link rel="stylesheet" href="css_files\explore_more_page.css">  <link rel="stylesheet" href="css_files\footer.css">
+    <script defer src="navbar.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        </header>
+
+    <nav class="navbar">
+        </nav>
+
+    <section class="explore-more-page">
+        <div class="container">
+            <div class="page-title">Explore Our Collections</div>
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="face">Face</button>
+                <button class="filter-btn" data-category="eyes">Eyes</button>
+                <button class="filter-btn" data-category="lips">Lips</button>
+                <button class="filter-btn" data-category="skincare">Skincare</button>
+                <button class="filter-btn" data-category="haircare">Haircare</button>
+            </div>
+            <div class="products-grid">
+                <div class="product-box" data-category="face">
+                    <img src="images\image.png" alt="Spotlight Moisturizer" class="product-image">
+                    <div class="image-overlay">
+                        <h3 class="product-title">Spotlight Moisturizer (50 gm)</h3>
+                        <p class="product-price">$1,095</p>
+                        <button class="add-to-msg">Add to msg</button>
+                    </div>
+                </div>
+
+                <div class="product-box" data-category="face">
+                    <img src="images\image.png" alt="Oil Primer" class="product-image">
+                    <div class="image-overlay">
+                        <h3 class="product-title">Spotlight Oil Primer (3 ml)</h3>
+                        <p class="product-price">$695</p>
+                        <button class="add-to-msg">Add to msg</button>
+                    </div>
+                </div>
+
+                <div class="product-box" data-category="haircare">
+                    <img src="images\image.png" alt="Up Repair Hask" class="product-image">
+                    <div class="image-overlay">
+                        <h3 class="product-title">Up Repair Hask</h3>
+                        <button class="add-to-msg">Add to msg</button>
+                    </div>
+                </div>
+
+                <div class="product-box" data-category="eyes">
+                    <img src="images\image.png" alt="PAC X Sarah" class="product-image">
+                    <div class="image-overlay">
+                        <h3 class="product-title">PAC X Sarah Dewy Hydrating Hist</h3>
+                        <button class="add-to-msg">Add to msg</button>
+                    </div>
+                </div>
+
+                <div class="product-box" data-category="lips">
+                    <img src="images\image.png" alt="Lipstick" class="product-image">
+                    <div class="image-overlay">
+                        <h3 class="product-title">Velvet Matte Lipstick</h3>
+                        <p class="product-price">$495</p>
+                        <button class="add-to-msg">Add to msg</button>
+                    </div>
+                </div>
+
+                <div class="product-box" data-category="skincare">
+                    <img src="images\image.png" alt="Serum" class="product-image">
+                    <div class="image-overlay">
+                        <h3 class="product-title">Hydrating Serum</h3>
+                        <p class="product-price">$795</p>
+                        <button class="add-to-msg">Add to msg</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="footer">
+         </footer>
+
+    <script src="js_files\javascripts.js"></script>
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productBoxes = document.querySelectorAll('.product-box');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+
+                // Add active class to the clicked button
+                button.classList.add('active');
+
+                productBoxes.forEach(box => {
+                    if (category === 'all' || box.dataset.category === category) {
+                        box.style.display = 'block'; // Or 'grid', 'flex', etc. depending on your layout
+                    } else {
+                        box.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
