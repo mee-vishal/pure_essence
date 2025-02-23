@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation Finder - Perfect Base Makeup Collection</title>
+    <link rel="stylesheet" href="css_files\navbar.css">
+    <link rel="stylesheet" href="css_files\header.css">
+    <style>
+        /* Foundation Page Styles */
+        .foundation-page {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .filter-section {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+        }
+
+        /* Filters Sidebar */
+        .filters {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .filter-group {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+
+        .filter-group h3 {
+            color: #ff3366;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+
+        .filter-option label {
+            margin-left: 0.5rem;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .shade-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .shade-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: transform 0.2s ease;
+        }
+
+        .shade-option:hover {
+            transform: scale(1.1);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #ff3366;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .product-details {
+            padding: 1.5rem;
+        }
+
+        .product-brand {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #333;
+        }
+
+        .product-price {
+            color: #ff3366;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover .product-actions {
+            opacity: 1;
+        }
+
+        .quick-view-btn {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .add-to-cart-btn {
+            background: #ff3366;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .filter-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">PURE ESSENCE</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products...">
+            </div>
+             <!-- Updated User Actions HTML -->
+    <div class="user-actions">
+        <!-- Search Icon -->
+        <div class="action-item search-toggle">
+            <i class="fas fa-search action-icon"></i>
+        </div>
+    
+        <!-- User Profile -->
+        <div class="action-item">
+            <div class="action-icon">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="profile-dropdown">
+                <div class="dropdown-header">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <p style="margin: 0.5rem 0; font-weight: 600;">Welcome!</p>
+                    <button class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                        Sign In / Register
+                    </button>
+                </div>
+                <ul class="dropdown-list">
+                    <li><i class="fas fa-heart" style="margin-right: 8px;"></i>Wishlist</li>
+                    <li><i class="fas fa-box" style="margin-right: 8px;"></i>Orders</li>
+                    <li><i class="fas fa-cog" style="margin-right: 8px;"></i>Settings</li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Wishlist -->
+        <div class="action-item">
+            <div class="action-icon wishlist-icon">
+                <i class="fas fa-heart"></i>
+                <span class="action-badge">3</span>
+            </div>
+        </div>
+    
+        <!-- Shopping Cart -->
+        <div class="action-item">
+            <div class="action-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="action-badge">2</span>
+            </div>
+            <div class="cart-preview">
+                <div class="cart-item">
+                    <img src="images\image.png" alt="Product">
+                    <div>
+                        <h4>Matte Lipstick</h4>
+                       </a> <p>₹599 x 1</p>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <img src="images\image.png" alt="Product">
+                    <div>
+                        <h4>Blush Palette</h4>
+                        <p>₹899 x 1</p>
+                    </div>
+                </div>
+                <div class="cart-total">Total: ₹1498</div>
+                <button class="cta-button" style="width: 100%; margin-top: 1rem;">
+                    View Cart
+                </button>
+            </div>
+        </div>
+    </div>
+    
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links">
+            <li>
+                <a href="#">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
+                    </svg>
+                    Makeup
+                </a>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <div class="dropdown-category">
+                            <h4>Face</h4>
+                            <a href="foundations.html">Foundation</a>
+                            <a href="#">Concealer</a>
+                            <a href="#">Powder</a>
+                            <a href="#">Blush</a>
+                        </div>
+                        <div class="dropdown-category">
+                            <h4>Eyes</h4>
+                            <a href="#">Eyeshadow</a>
+                            <a href="#">Eyeliner</a>
+                            <a href="#">Mascara</a>
+                            <a href="#">Brows</a>
+                        </div>
+                        <div class="dropdown-category">
+                            <h4>Lips</h4>
+                            <a href="#">Lipstick</a>
+                            <a href="#">Lip Gloss</a>
+                            <a href="#">Lip Liner</a>
+                            <a href="#">Lip Balm</a>
+                        </div>
+                        <div class="dropdown-image"></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
+                    </svg>
+                    Skincare
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
+                    </svg>
+                    Haircare
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
+                    </svg>
+                    Appliances
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
+                    </svg>
+                    Brands
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+     
+    
+    <div class="foundation-page">
+        <div class="page-header">
+            <h1>Find Your Perfect Foundation</h1>
+            <p>Discover 250+ foundations for every skin type and tone</p>
+        </div>
+
+        <div class="filter-section">
+            <div class="filters">
+                <div class="filter-group">
+                    <h3>Category</h3>
+                    <div class="filter-option">
+                        <input type="checkbox" id="liquid">
+                        <label for="liquid">Liquid Foundation</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="powder">
+                        <label for="powder">Powder Foundation</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="stick">
+                        <label for="stick">Stick Foundation</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Shade Range</h3>
+                    <div class="shade-filter">
+                        <div class="shade-option" style="background: #f3d7c4"></div>
+                        <div class="shade-option" style="background: #e5c2a5"></div>
+                        <div class="shade-option" style="background: #d9ae87"></div>
+                        <div class="shade-option" style="background: #c99769"></div>
+                        <div class="shade-option" style="background: #b07d52"></div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Brand</h3>
+                    <div class="filter-option">
+                        <input type="checkbox" id="loreal">
+                        <label for="loreal">L'Oréal</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="maybelline">
+                        <label for="maybelline">Maybelline</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="fenty">
+                        <label for="fenty">Fenty Beauty</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images\image.png" alt="Liquid Foundation">
+                        <span class="product-badge">Best Seller</span>
+                    </div>
+                    <div class="product-details">
+                        <div class="product-brand">FENTY BEAUTY</div>
+                        <h3 class="product-title">Pro Filt'r Soft Matte Longwear Foundation</h3>
+                        <div class="product-price"><a href="foundation_product.html">$35.00</a></div>
+                        <div class="product-actions">
+                            <button class="quick-view-btn">Quick View</button>
+                            <button class="add-to-cart-btn">Add to Bag</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images\image.png" alt="Powder Foundation">
+                        <span class="product-badge">New Arrival</span>
+                    </div>
+                    <div class="product-details">
+                        <div class="product-brand">MAYBELLINE</div>
+                        <h3 class="product-title">SuperStay Full Coverage Powder</h3>
+                        <div class="product-price">$12.99</div>
+                        <div class="product-actions">
+                            <button class="quick-view-btn">Quick View</button>
+                            <button class="add-to-cart-btn">Add to Bag</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images\image.png" alt="Stick Foundation">
+                        <span class="product-badge">Vegan Formula</span>
+                    </div>
+                    <div class="product-details">
+                        <div class="product-brand">L'ORÉAL</div>
+                        <h3 class="product-title">Infallible 24H Fresh Wear Stick</h3>
+                        <div class="product-price">$18.50</div>
+                        <div class="product-actions">
+                            <button class="quick-view-btn">Quick View</button>
+                            <button class="add-to-cart-btn">Add to Bag</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

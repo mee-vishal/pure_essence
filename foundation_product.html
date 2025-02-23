@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="foundation-detail-page">
+        <div class="foundation-detail-container">
+            <!-- Product Gallery -->
+            <div class="foundation-image-gallery">
+                <div class="main-image">
+                    <img src="images\image.png" alt="Fenty Beauty Pro Filt'r Soft Matte Longwear Foundation" id="mainImage">
+                </div>
+                <div class="thumbnail-grid">
+                    <img src="images\image.png" class="thumbnail active" onclick="changeImage('foundation-main.jpg')">
+                    <img src="images\image.png" class="thumbnail" onclick="changeImage('angle-shot.jpg')">
+                    <img src="images\image.png" class="thumbnail" onclick="changeImage('swatch-shot.jpg')">
+                    <img src="images\image.png" class="thumbnail" onclick="changeImage('packaging.jpg')">
+                </div>
+            </div>
+    
+            <!-- Product Info -->
+            <div class="foundation-product-info">
+                <h1 class="product-title">Fenty Beauty Pro Filt'r Soft Matte Longwear Foundation</h1>
+                <div class="brand-rating">
+                    <span class="brand">Brand: Fenty Beauty</span>
+                    <div class="ratings">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">2,458 ratings</span>
+                    </div>
+                </div>
+                
+                <div class="price-section">
+                    <span class="current-price">$35.00</span>
+                    <span class="original-price">$42.00</span>
+                    <span class="discount">17% off</span>
+                </div>
+    
+                <div class="shade-selector">
+                    <h3>Select Shade</h3>
+                    <div class="shade-grid">
+                        <div class="shade-option" style="background: #f3d7c4" data-shade="110">
+                            <span class="shade-name">110</span>
+                        </div>
+                        <!-- More shade options -->
+                    </div>
+                </div>
+    
+                <div class="product-highlights">
+                    <h3>Highlights</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Soft-matte, natural finish</li>
+                        <li><i class="fas fa-check"></i> Oil-free formula</li>
+                        <li><i class="fas fa-check"></i> 24-hour wear</li>
+                        <li><i class="fas fa-check"></i> Climate-adaptive technology</li>
+                        <li><i class="fas fa-check"></i> 50 shade range</li>
+                    </ul>
+                </div>
+    
+                <div class="quantity-section">
+                    <label>Quantity:</label>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn">-</button>
+                        <input type="number" value="1" min="1" max="10">
+                        <button class="quantity-btn">+</button>
+                    </div>
+                </div>
+    
+                <div class="action-buttons">
+                    <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+    
+                <div class="trust-badges">
+                    <div class="badge"><i class="fas fa-shipping-fast"></i> Free Shipping</div>
+                    <div class="badge"><i class="fas fa-undo"></i> 30-Day Returns</div>
+                    <div class="badge"><i class="fas fa-lock"></i> Secure Checkout</div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Product Details -->
+        <div class="product-details-section">
+            <div class="detail-tabs">
+                <button class="tab active" onclick="openTab('description')">Description</button>
+                <button class="tab" onclick="openTab('ingredients')">Ingredients</button>
+                <button class="tab" onclick="openTab('reviews')">Reviews (2.4k)</button>
+            </div>
+    
+            <div id="description" class="tab-content active">
+                <h2>About This Item</h2>
+                <p>A soft-matte, longwear foundation with climate-adaptive technology that's 
+                sweat-resistant, humidity-resistant, and won't clog pores. Available in 
+                50 flexible shades for all skin types.</p>
+                
+                <h3>Benefits</h3>
+                <ul>
+                    <li>Medium to full buildable coverage</li>
+                    <li>Lightweight, breathable texture</li>
+                    <li>Non-drying, pore-diffusing finish</li>
+                    <li>Oil-free & non-comedogenic</li>
+                </ul>
+            </div>
+    
+            <div id="ingredients" class="tab-content">
+                <h2>Key Ingredients</h2>
+                <ul>
+                    <li>Glycerin: Hydration</li>
+                    <li>Japanese Raisin Tree Extract: Antioxidant</li>
+                    <li>Baobab Extract: Nourishment</li>
+                    <li>Oil-Absorbing Spheres: Matte finish</li>
+                </ul>
+            </div>
+    
+            <div id="reviews" class="tab-content">
+                <div class="review">
+                    <div class="review-header">
+                        <div class="user-avatar">JD</div>
+                        <div class="user-info">
+                            <h4>Jane D. <span class="verified">Verified Buyer</span></h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Best foundation I've ever used! Stays matte without feeling dry. Perfect shade match!</p>
+                    <span class="review-date">Reviewed on March 15, 2024</span>
+                </div>
+                <!-- More reviews -->
+            </div>
+        </div>
+    
+        <!-- Related Products -->
+        <div class="related-products">
+            <h2>Frequently Bought Together</h2>
+            <div class="related-grid">
+                <!-- Product cards similar to previous -->
+            </div>
+        </div>
+    </div>
+    
+    <style>
+    /* Foundation Detail Page Styles */
+    .foundation-detail-page {
+        max-width: 1400px;
+        margin: 2rem auto;
+        padding: 0 20px;
+    }
+    
+    .foundation-detail-container {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 3rem;
+        margin-bottom: 4rem;
+    }
+    
+    .foundation-image-gallery {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+    }
+    
+    .main-image img {
+        width: 100%;
+        height: 600px;
+        object-fit: contain;
+        border-radius: 10px;
+    }
+    
+    .thumbnail-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .thumbnail {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 5px;
+    }
+    
+    .thumbnail.active {
+        border-color: #ff3366;
+    }
+    
+    .foundation-product-info {
+        padding: 1rem;
+    }
+    
+    .product-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .brand-rating {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .stars {
+        color: #ffd700;
+        font-size: 0.9rem;
+    }
+    
+    .price-section {
+        background: #fff8f8;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 2rem 0;
+    }
+    
+    .current-price {
+        font-size: 2rem;
+        color: #ff3366;
+        font-weight: bold;
+        margin-right: 1rem;
+    }
+    
+    .original-price {
+        text-decoration: line-through;
+        color: #666;
+    }
+    
+    .discount {
+        color: #28a745;
+        font-weight: bold;
+        margin-left: 1rem;
+    }
+    
+    .shade-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .shade-option {
+        width: 50px;
+        height: 50px;
+        /* border-radius: 50%; */
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        text-align: center;
+        border: 2px solid transparent;
+    }
+    
+    .shade-option:hover::after {
+        content: attr(data-shade);
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        font-size: 0.8rem;
+    }
+    
+    .product-highlights li {
+        margin: 0.8rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .quantity-selector {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .quantity-btn {
+        width: 35px;
+        height: 35px;
+        border: 1px solid #ddd;
+        background: white;
+        cursor: pointer;
+    }
+    
+    .action-buttons {
+        display: flex;
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+    
+    .add-to-cart-btn {
+        background: #ff3366;
+        color: white;
+        padding: 1rem 3rem;
+        border: none;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+    
+    .buy-now-btn {
+        background: #333;
+        color: white;
+        padding: 1rem 3rem;
+        border: none;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+    
+    .detail-tabs {
+        border-bottom: 2px solid #eee;
+        margin-bottom: 2rem;
+    }
+    
+    .tab {
+        background: none;
+        border: none;
+        padding: 1rem 2rem;
+        cursor: pointer;
+        font-size: 1.1rem;
+        color: #666;
+    }
+    
+    .tab.active {
+        color: #ff3366;
+        border-bottom: 3px solid #ff3366;
+    }
+    
+    .review {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+    
+    .user-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #ff3366;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    @media (max-width: 768px) {
+        .foundation-detail-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .main-image img {
+            height: 400px;
+        }
+        
+        .action-buttons {
+            flex-direction: column;
+        }
+    }
+    </style>
+</body>
+</html>

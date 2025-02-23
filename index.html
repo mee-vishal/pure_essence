@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pure essence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css_files\header.css">
+    <link rel="stylesheet" href="css_files\navbar.css">
+    <link rel="stylesheet" href="css_files\hero_section.css">
+    <link rel="stylesheet" href="css_files\products.css">
+    <link rel="stylesheet" href="css_files\footer.css">
+    <link rel="stylesheet" href="css_files\sales_in_discount.css">
+    <link rel="stylesheet" href="css_files\explore_more.css">
+    <link rel="stylesheet" href="css_files\faqs.css">
+    <script defer src="navbar.js"></script> 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+</style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">PURE ESSENCE</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products...">
+            </div>
+             <!-- Updated User Actions HTML -->
+    <div class="user-actions">
+        <!-- Search Icon -->
+        <div class="action-item search-toggle">
+            <i class="fas fa-search action-icon"></i>
+        </div>
+    
+        <!-- User Profile -->
+        <div class="action-item">
+            <div class="action-icon">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="profile-dropdown">
+                <div class="dropdown-header">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <p style="margin: 0.5rem 0; font-weight: 600;">Welcome!</p>
+                    <button class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                        Sign In / Register
+                    </button>
+                </div>
+                <ul class="dropdown-list">
+                    <li><i class="fas fa-heart" style="margin-right: 8px;"></i>Wishlist</li>
+                    <li><i class="fas fa-box" style="margin-right: 8px;"></i>Orders</li>
+                    <li><i class="fas fa-cog" style="margin-right: 8px;"></i>Settings</li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Wishlist -->
+        <div class="action-item">
+            <div class="action-icon wishlist-icon">
+                <i class="fas fa-heart"></i>
+                <span class="action-badge">3</span>
+            </div>
+        </div>
+    
+        <!-- Shopping Cart -->
+        <div class="action-item">
+            <div class="action-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="action-badge">2</span>
+            </div>
+            <div class="cart-preview">
+                <div class="cart-item">
+                    <img src="images\image.png" alt="Product">
+                    <div>
+                        <h4>Matte Lipstick</h4>
+                        <p>₹599 x 1</p>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <img src="images\image.png" alt="Product">
+                    <div>
+                        <h4>Blush Palette</h4>
+                        <p>₹899 x 1</p>
+                    </div>
+                </div>
+                <div class="cart-total">Total: ₹1498</div>
+                <button class="cta-button" style="width: 100%; margin-top: 1rem;">
+                    View Cart
+                </button>
+            </div>
+        </div>
+    </div>
+    
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links">
+            <li>
+                <a href="#">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
+                    </svg>
+                    Makeup
+                </a>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <div class="dropdown-category">
+                            <h4>Face</h4>
+                            <a href="foundations.html">Foundation</a>
+                            <a href="#">Concealer</a>
+                            <a href="#">Powder</a>
+                            <a href="#">Blush</a>
+                        </div>
+                        <div class="dropdown-category">
+                            <h4>Eyes</h4>
+                            <a href="#">Eyeshadow</a>
+                            <a href="#">Eyeliner</a>
+                            <a href="#">Mascara</a>
+                            <a href="#">Brows</a>
+                        </div>
+                        <div class="dropdown-category">
+                            <h4>Lips</h4>
+                            <a href="#">Lipstick</a>
+                            <a href="#">Lip Gloss</a>
+                            <a href="#">Lip Liner</a>
+                            <a href="#">Lip Balm</a>
+                        </div>
+                        <div class="dropdown-image"></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
+                    </svg>
+                    Skincare
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
+                    </svg>
+                    Haircare
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
+                    </svg>
+                    Appliances
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
+                    </svg>
+                    Brands
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+
+    <!-- Video Hero -->
+    <section class="video-hero">
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="images\ae2a71a1a97844f2920cb3e6c73b87c9.HD-1080p-7.2Mbps-42381401.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-content">
+            
+
+                <button class="cta-button">
+                    <span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.579 2.393a.75.75 0 0 0-1.157 0C9.962 4.155 7.5 5.385 5.134 5.49 2.802 5.594.75 7.834.75 11.029c0 5.423 5.325 8.838 10.462 11.146a.75.75 0 0 0 .576 0C16.925 19.867 22.25 16.452 22.25 11.03c0-3.195-2.052-5.435-4.385-5.539-2.365-.105-4.828-1.335-6.286-3.098zM12 8.75a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5z"/>
+                        </svg>
+                        Explore Now
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+        <div class="scroll-arrows">
+            <button class="scroll-arrow left-arrow"><i class="fas fa-chevron-left"></i></button>
+            <button class="scroll-arrow right-arrow"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        
+        <h2 class="grid-title">New Launches</h2>
+        <div class="products">
+            <div class="product-card">
+                <img src="images\image copy.png" alt="Product 1">
+                <h3>Matte Lipstick</h3>
+                <p>Long-lasting color</p>
+                <p>₹599</p>
+            </div>
+            <div class="product-card">
+                <img src="images\image.png" alt="Product 2">
+                <h3>HD Foundation</h3>
+                <p>Weightless finish</p>
+                <p>₹899</p>
+            </div>
+            <div class="product-card">
+                <img src="images\image.png" alt="Product 3">
+                <h3>Eye Shadow Palette</h3>
+                <p>10 vibrant shades</p>
+                <p>₹1299</p>
+            </div>
+            <div class="product-card">
+                <img src="images\image.png" alt="Product 4">
+                <h3>Makeup Brush Set</h3>
+                <p>Professional tools</p>
+                <p>₹799</p>
+            </div>
+            <div class="product-card">
+                <img src="images\image.png" alt="Product 5">
+                <h3>Setting Spray</h3>
+                <p>16h makeup lock</p>
+                <p>₹499</p>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- %off -->
+<div class="carousel-container">
+    <div class="carousel-track">
+        <div class="carousel-slide">
+            <img src="images\Screenshot 2025-02-23 103412.png" alt="Product 1">
+            <div class="promo-badge">10% OFF</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="images\Screenshot 2025-02-23 103137.png" alt="Product 2">
+            <div class="promo-badge">30% OFF</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="images\Screenshot 2025-02-23 103238.png" alt="Product 3">
+            <div class="promo-badge">25% OFF</div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- explore more -->
+<div class="container">
+    <div class="left-section">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" 
+             alt="Cosmetics" 
+             class="main-image">
+    </div>
+
+    <div class="right-section">
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-box">
+                <img src="images\image.png" 
+                     alt="Spotlight Moisturizer" 
+                     class="product-image">
+                <div class="image-overlay">
+                    <h3 class="product-title">Spotlight Moisturizer (50 gm)</h3>
+                    <p class="product-price">$1,095</p>
+                    <button class="add-to-msg">Add to msg</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-box">
+                <img src="images\image.png" 
+                     alt="Oil Primer" 
+                     class="product-image">
+                <div class="image-overlay">
+                    <h3 class="product-title">Spotlight Oil Primer (3 ml)</h3>
+                    <p class="product-price">$695</p>
+                    <button class="add-to-msg">Add to msg</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-box">
+                <img src="images\image.png" 
+                     alt="Up Repair Hask" 
+                     class="product-image">
+                <div class="image-overlay">
+                    <h3 class="product-title">Up Repair Hask</h3>
+                    <button class="add-to-msg">Add to msg</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-box">
+                <img src="images\image.png" 
+                     alt="PAC X Sarah" 
+                     class="product-image">
+                <div class="image-overlay">
+                    <h3 class="product-title">PAC X Sarah Dewy Hydrating Hist</h3>
+                    <button class="add-to-msg">Add to msg</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="explore-btn">Explore More</button>
+    </div>
+</div>
+
+
+<!-- faqs -->
+<section class="faq-section">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                Are your products cruelty-free?
+            </div>
+            <div class="faq-answer">
+                Yes, all our cosmetics are cruelty-free and never tested on animals. We are proud to be certified by Leaping Bunny and PETA.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How long do your products last after opening?
+            </div>
+            <div class="faq-answer">
+                Most products have a shelf life of 12-24 months after opening. Look for the period-after-open symbol (6M, 12M, 24M) on each product's packaging.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Can I return products if they don't suit me?
+            </div>
+            <div class="faq-answer">
+                Absolutely! We offer a 30-day satisfaction guarantee. If you're not happy with your purchase, you can return it for a full refund.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Are your products suitable for sensitive skin?
+            </div>
+            <div class="faq-answer">
+                Many of our products are formulated for sensitive skin. Look for the "Sensitive Skin Friendly" badge on product pages. We recommend doing a patch test first.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do you offer vegan products?
+            </div>
+            <div class="faq-answer">
+                Over 80% of our collection is vegan, and we're working to make it 100%. Vegan products are clearly marked with a leaf icon on their labels.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How can I track my order?
+            </div>
+            <div class="faq-answer">
+                Once your order ships, you'll receive a tracking number via email. You can monitor your package's journey directly through our order tracking portal.
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <ul>
+                    <li>Our Story</li>
+                    <li>Careers</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Help</h3>
+                <ul>
+                    <li>FAQ</li>
+                    <li>Contact Us</li>
+                    <li>Shipping</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Policy</h3>
+                <ul>
+                    <li>Return Policy</li>
+                    <li>Terms of Use</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js_files\javascripts.js"></script>    
+</body>
+</html>
