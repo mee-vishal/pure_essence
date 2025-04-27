@@ -1,479 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pure essence</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="css_files\header.css">
-    <link rel="stylesheet" href="css_files\navbar.css">
-    <link rel="stylesheet" href="css_files\hero_section.css">
-    <link rel="stylesheet" href="css_files\products.css">
-    <link rel="stylesheet" href="css_files\footer.css">
-    <link rel="stylesheet" href="css_files\sales_in_discount.css">
-    <link rel="stylesheet" href="css_files\explore_more.css">
-    <link rel="stylesheet" href="css_files\faqs.css">
-    <link rel="stylesheet" href="css_files\members.css">
-    <script defer src="navbar.js"></script> 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure Essence</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    .header {
+      background: linear-gradient(to right, #333, #555);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .navbar {
+      background: #444;
+      padding: 1rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #f3f3f3, #eaeaea);
+      text-align: center;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-content { max-width: 600px; }
+    .hero h1 { font-size: 2rem; color: #333; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
+    .hero p { color: #666; font-size: 1.1rem; margin: 0.8rem 0 1.5rem; }
+    .hero img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+    }
+
+    .cta-button {
+      background: #333;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover { background: #555; transform: scale(1.05); }
+
+    .product-grid {
+      text-align: center;
+      padding: 2rem;
+      background: #f8f8f8;
+    }
+
+    .product-grid h2 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .product-card h3 {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-card .price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #27ae60;
+      margin-bottom: 0.5rem;
+    }
+
+    .buy-button {
+      display: block;
+      background: #333;
+      color: white;
+      padding: 0.6rem;
+      text-decoration: none;
+      border-radius: 5px;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+    .buy-button:hover { background: #555; }
+
+    .faq-section {
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+
+    .faq-item {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: white;
+      border-radius: 4px;
+    }
+
+    .about-section {
+      padding: 2rem;
+      background: #f3f3f3;
+      text-align: center;
+    }
+
+    .footer {
+      background: #333;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { flex-direction: column; text-align: center; }
+    }
+
+    .banner {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .banner img {
+      width: 100%;
+      height: 25rem;
+      border-radius: 10px;
+    }
+
+    .discount-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: red;
+      color: white;
+      padding: 8px 12px;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">PURE ESSENCE</div>
+  </header>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">PURE ESSENCE</div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search for products...">
-            </div>
-             <!-- Updated User Actions HTML -->
-    <div class="user-actions">
-        <!-- Search Icon -->
-        <div class="action-item search-toggle">
-            <i class="fas fa-search action-icon"></i>
-        </div>
-    
-        <!-- User Profile -->
-        <div class="action-item">
-            <div class="action-icon">
-                <i class="fas fa-user"></i>
-            </div>
-            <div class="profile-dropdown">
-                <div class="dropdown-header">
-                    <div class="user-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <p style="margin: 0.5rem 0; font-weight: 600;">Welcome!</p>
-                    <button class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
-                        Sign In / Register
-                    </button>
-                </div>
-                <ul class="dropdown-list">
-                    <li><i class="fas fa-heart" style="margin-right: 8px;"></i>Wishlist</li>
-                    <li><i class="fas fa-box" style="margin-right: 8px;"></i>Orders</li>
-                    <li><i class="fas fa-cog" style="margin-right: 8px;"></i>Settings</li>
-                </ul>
-            </div>
-        </div>
-    
-        <!-- Wishlist -->
-        <div class="action-item">
-            <div class="action-icon wishlist-icon">
-                <i class="fas fa-heart"></i>
-                <span class="action-badge">3</span>
-            </div>
-        </div>
-    
-        <!-- Shopping Cart -->
-        <div class="action-item">
-            <div class="action-icon">
-                <i class="fas fa-shopping-bag"></i>
-                <span class="action-badge">2</span>
-            </div>
-            <div class="cart-preview">
-                <div class="cart-item">
-                    <img src="images\image.png" alt="Product">
-                    <div>
-                        <h4>Matte Lipstick</h4>
-                        <p>₹599 x 1</p>
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <img src="images\image.png" alt="Product">
-                    <div>
-                        <h4>Blush Palette</h4>
-                        <p>₹899 x 1</p>
-                    </div>
-                </div>
-                <div class="cart-total">Total: ₹1498</div>
-                <button class="cta-button" style="width: 100%; margin-top: 1rem;">
-                    View Cart
-                </button>
-            </div>
-        </div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="foundations.html"><i class="fas fa-makeup-brush"></i> Makeup</a></li>
+      <li><a href="#about-section"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="#faq-section"><i class="fas fa-question-circle"></i> FAQ</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Unleash Your Natural Beauty</h1>
+      <p>Explore the purest skincare and makeup essentials made just for you.</p>
+      <img src="images/Screenshot 2025-02-23 103000.png" alt="Beauty Products">
+      <a href="" class="cta-button">Shop Now</a>
     </div>
-    
-        </div>
-    </header>
+  </section>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-        <ul class="nav-links">
-            <li>
-                <a href="#">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
-                    </svg>
-                    Makeup
-                </a>
-                <div class="dropdown">
-                    <div class="dropdown-column">
-                        <div class="dropdown-category">
-                            <h4>Face</h4>
-                            <a href="foundations.html">Foundation</a>
-                            <a href="#">Concealer</a>
-                            <a href="#">Powder</a>
-                            <a href="#">Blush</a>
-                        </div>
-                        <div class="dropdown-category">
-                            <h4>Eyes</h4>
-                            <a href="#">Eyeshadow</a>
-                            <a href="#">Eyeliner</a>
-                            <a href="#">Mascara</a>
-                            <a href="#">Brows</a>
-                        </div>
-                        <div class="dropdown-category">
-                            <h4>Lips</h4>
-                            <a href="#">Lipstick</a>
-                            <a href="#">Lip Gloss</a>
-                            <a href="#">Lip Liner</a>
-                            <a href="#">Lip Balm</a>
-                        </div>
-                        <div class="dropdown-image"></div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a href="#">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
-                    </svg>
-                    Skincare
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
-                    </svg>
-                    Haircare
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
-                    </svg>
-                    Appliances
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9V7h4v4h-4zm0 6v-4h4v4h-4z"/>
-                    </svg>
-                    Brands
-                </a>
-            </li>
-        </ul>
-    </nav>
-    
-
-    <!-- Video Hero -->
-    <section class="video-hero">
-        <div class="video-container">
-            <video autoplay muted loop playsinline>
-                <source src="images\ae2a71a1a97844f2920cb3e6c73b87c9.HD-1080p-7.2Mbps-42381401.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-content">
-            
-
-                <button class="cta-button">
-                    <span>
-                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12.579 2.393a.75.75 0 0 0-1.157 0C9.962 4.155 7.5 5.385 5.134 5.49 2.802 5.594.75 7.834.75 11.029c0 5.423 5.325 8.838 10.462 11.146a.75.75 0 0 0 .576 0C16.925 19.867 22.25 16.452 22.25 11.03c0-3.195-2.052-5.435-4.385-5.539-2.365-.105-4.828-1.335-6.286-3.098zM12 8.75a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5z"/>
-                        </svg>
-                       <a href="explore_more.html" style="text-decoration: none;color: antiquewhite;">Explore Now</a> 
-                    </span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Grid -->
-    <div class="product-grid">
-        <div class="scroll-arrows">
-            <button class="scroll-arrow left-arrow"><i class="fas fa-chevron-left"></i></button>
-            <button class="scroll-arrow right-arrow"><i class="fas fa-chevron-right"></i></button>
-        </div>
-        
-        <h2 class="grid-title">New Launches</h2>
-        <div class="products">
-            <div class="product-card">
-                <img src="images\image copy.png" alt="Product 1">
-                <h3>Matte Lipstick</h3>
-                <p>Long-lasting color</p>
-                <p>₹599</p>
-            </div>
-            <div class="product-card">
-                <img src="images\image.png" alt="Product 2">
-                <h3>HD Foundation</h3>
-                <p>Weightless finish</p>
-                <p>₹899</p>
-            </div>
-            <div class="product-card">
-                <img src="images\image.png" alt="Product 3">
-                <h3>Eye Shadow Palette</h3>
-                <p>10 vibrant shades</p>
-                <p>₹1299</p>
-            </div>
-            <div class="product-card">
-                <img src="images\image.png" alt="Product 4">
-                <h3>Makeup Brush Set</h3>
-                <p>Professional tools</p>
-                <p>₹799</p>
-            </div>
-            <div class="product-card">
-                <img src="images\image.png" alt="Product 5">
-                <h3>Setting Spray</h3>
-                <p>16h makeup lock</p>
-                <p>₹499</p>
-            </div>
-        </div>
+  <!-- New Launches -->
+  <section class="product-grid">
+    <h2>New Launches</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="images/image copy.png" alt="Matte Lipstick">
+        <h3>Matte Lipstick</h3>
+        <p class="price">₹599</p>
+        <div class="buy-button">Buy Now</div>
+      </div>
+      <div class="product-card">
+        <img src="images/image.png" alt="Hydrating Face Cream">
+        <h3>Hydrating Face Cream</h3>
+        <p class="price">₹799</p>
+        <div class="buy-button">Buy Now</div>
+      </div>
+      <div class="product-card">
+        <img src="images/Screenshot 2025-04-08 001011.png" alt="Herbal Shampoo">
+        <h3>Herbal Shampoo</h3>
+        <p class="price">₹699</p>
+        <div class="buy-button">Buy Now</div>
+      </div>
     </div>
+  </section>
 
+  <!-- Banner -->
+  <div class="banner">
+    <img src="images/Screenshot 2025-02-23 103412.png" alt="Product Banner">
+    <div class="discount-badge">10% OFF</div>
+  </div>
 
-
-<!-- %off -->
-<div class="carousel-container">
-    <div class="carousel-track">
-        <div class="carousel-slide">
-            <img src="images\Screenshot 2025-02-23 103412.png" alt="Product 1">
-            <div class="promo-badge">10% OFF</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="images\Screenshot 2025-02-23 103137.png" alt="Product 2">
-            <div class="promo-badge">30% OFF</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="images\Screenshot 2025-02-23 103238.png" alt="Product 3">
-            <div class="promo-badge">25% OFF</div>
-        </div>
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq-section">
+    <h2>FAQs</h2>
+    <div class="faq-item">
+      <h3>Are your products cruelty-free?</h3>
+      <p>Yes, all our products are cruelty-free and never tested on animals.</p>
     </div>
-</div>
-
-
-
-<!-- explore more -->
-<div class="container">
-    <div class="left-section">
-        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" 
-             alt="Cosmetics" 
-             class="main-image">
+    <div class="faq-item">
+      <h3>Do your products contain any harmful chemicals?</h3>
+      <p>No, our products are made with natural and safe ingredients, free from parabens and sulfates.</p>
     </div>
-
-    <div class="right-section">
-        <div class="products-grid">
-            <!-- Product 1 -->
-            <div class="product-box">
-                <img src="images\image.png" 
-                     alt="Spotlight Moisturizer" 
-                     class="product-image">
-                <div class="image-overlay">
-                    <h3 class="product-title">Spotlight Moisturizer (50 gm)</h3>
-                    <p class="product-price">$1,095</p>
-                    <button class="add-to-msg">Add to msg</button>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-box">
-                <img src="images\image.png" 
-                     alt="Oil Primer" 
-                     class="product-image">
-                <div class="image-overlay">
-                    <h3 class="product-title">Spotlight Oil Primer (3 ml)</h3>
-                    <p class="product-price">$695</p>
-                    <button class="add-to-msg">Add to msg</button>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-box">
-                <img src="images\image.png" 
-                     alt="Up Repair Hask" 
-                     class="product-image">
-                <div class="image-overlay">
-                    <h3 class="product-title">Up Repair Hask</h3>
-                    <button class="add-to-msg">Add to msg</button>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-box">
-                <img src="images\image.png" 
-                     alt="PAC X Sarah" 
-                     class="product-image">
-                <div class="image-overlay">
-                    <h3 class="product-title">PAC X Sarah Dewy Hydrating Hist</h3>
-                    <button class="add-to-msg">Add to msg</button>
-                </div>
-            </div>
-        </div>
-
-        <button class="explore-btn">Explore More</button>
+    <div class="faq-item">
+      <h3>Is your packaging eco-friendly?</h3>
+      <p>Yes, we use recyclable and biodegradable packaging to reduce environmental impact.</p>
     </div>
-</div>
-
-
-<!-- faqs -->
-<section class="faq-section">
-    <h2 class="faq-title">Frequently Asked Questions</h2>
-    
-    <div class="faq-container">
-        <div class="faq-item">
-            <div class="faq-question">
-                Are your products cruelty-free?
-            </div>
-            <div class="faq-answer">
-                Yes, all our cosmetics are cruelty-free and never tested on animals. We are proud to be certified by Leaping Bunny and PETA.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                How long do your products last after opening?
-            </div>
-            <div class="faq-answer">
-                Most products have a shelf life of 12-24 months after opening. Look for the period-after-open symbol (6M, 12M, 24M) on each product's packaging.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                Can I return products if they don't suit me?
-            </div>
-            <div class="faq-answer">
-                Absolutely! We offer a 30-day satisfaction guarantee. If you're not happy with your purchase, you can return it for a full refund.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                Are your products suitable for sensitive skin?
-            </div>
-            <div class="faq-answer">
-                Many of our products are formulated for sensitive skin. Look for the "Sensitive Skin Friendly" badge on product pages. We recommend doing a patch test first.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                Do you offer vegan products?
-            </div>
-            <div class="faq-answer">
-                Over 80% of our collection is vegan, and we're working to make it 100%. Vegan products are clearly marked with a leaf icon on their labels.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                How can I track my order?
-            </div>
-            <div class="faq-answer">
-                Once your order ships, you'll receive a tracking number via email. You can monitor your package's journey directly through our order tracking portal.
-            </div>
-        </div>
+    <div class="faq-item">
+      <h3>Do you offer international shipping?</h3>
+      <p>Yes, we ship worldwide! Delivery times may vary depending on your location.</p>
     </div>
-</section>
-
-
-
-<section class="team-section">
-    <h2 class="team-heading">Project Creators</h2>
-    <div class="team-members">
-        <!-- Member 1 -->
-        <div class="member-card">
-            <div class="whatsapp-dp">
-                <div class="initials-avatar" style="background-color: #ff6b81;">JD</div>
-            </div>
-            <div class="member-info">
-                <h3>HARMANJEET SINGH</h3>
-                <p class="role">Lead Developer & Designer</p>
-                <div class="member-details">
-                    <p>📱 Full-stack Developer</p>
-                    <p>💄 Cosmetics Tech Specialist</p>
-                    <p>📧 john.doe@example.com</p>
-                </div>
-                <div class="member-links">
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Member 2 -->
-        <div class="member-card">
-            <div class="whatsapp-dp">
-                <div class="initials-avatar" style="background-color: #7bed9f;">AS</div>
-            </div>
-            <div class="member-info">
-                <h3>HARMANJEET SINGH</h3>
-                <p class="role">UI/UX Specialist</p>
-                <div class="member-details">
-                    <p>📱 Frontend Wizard</p>
-                    <p>🎨 Visual Design Expert</p>
-                    <p>📧 alice.smith@example.com</p>
-                </div>
-                <div class="member-links">
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
+    <div class="faq-item">
+      <h3>Can I return a product if I’m not satisfied?</h3>
+      <p>Absolutely! We have a 30-day return policy for unopened and unused products.</p>
     </div>
-</section>
+    <div class="faq-item">
+      <h3>Are your products suitable for sensitive skin?</h3>
+      <p>Yes, our products are dermatologically tested and formulated for all skin types, including sensitive skin.</p>
+    </div>
+  </section>
 
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <ul>
-                    <li>Our Story</li>
-                    <li>Careers</li>
-                    <li>Blog</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Help</h3>
-                <ul>
-                    <li>FAQ</li>
-                    <li>Contact Us</li>
-                    <li>Shipping</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Policy</h3>
-                <ul>
-                    <li>Return Policy</li>
-                    <li>Terms of Use</li>
-                    <li>Privacy Policy</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-youtube"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-    <script src="js_files\javascripts.js"></script>    
+  <!-- Footer (About Section) -->
+  <footer class="footer" id="about-section">
+    <h2>About Pure Essence</h2>
+    <p>Pure Essence is dedicated to celebrating natural beauty with pure, cruelty-free products.
+      We believe in transparency, sustainability, and empowering everyone to feel confident and radiant.
+      Join us on a journey to a more beautiful, ethical, and mindful world.
+    </p>
+  </footer>
 </body>
 </html>
